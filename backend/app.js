@@ -46,6 +46,11 @@ mongoose.connect(process.env.MONGODB_URI);
 if (isProduction) {
 } else {
   mongoose.set("debug", true);
+  const ITEM = mongoose.model('Item');
+  let new_item = {
+    "title": "ababa"
+  }
+  ITEM.insertMany([new_item]);
 }
 
 require("./models/User");
